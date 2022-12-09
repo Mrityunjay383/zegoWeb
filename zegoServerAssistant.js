@@ -1,5 +1,5 @@
 "use strict";
-var crypto_1 = require("crypto");
+// var crypto_1 = require("crypto");
 var ErrorCode;
 (function (ErrorCode) {
     ErrorCode[ErrorCode["success"] = 0] = "success";
@@ -39,7 +39,7 @@ function getAlgorithm(keyBase64) {
 }
 // AES加密，使用模式: CBC/PKCS5Padding
 function aesEncrypt(plainText, key, iv) {
-    var cipher = crypto_1.createCipheriv(getAlgorithm(key), key, iv);
+    var cipher = getAlgorithm(key);
     cipher.setAutoPadding(true);
     var encrypted = cipher.update(plainText);
     var final = cipher.final();
